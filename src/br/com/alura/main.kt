@@ -1,5 +1,7 @@
 package br.com.alura
 
+//Doc collections: https://kotlinlang.org/docs/reference/constructing-collections.html
+
 fun main() {
     val banco = BancoDeNomes()
     val nomesSalvos: MutableCollection<String> = banco.nomes as MutableCollection<String> //Burlando a restrição para poder adicionar nessa lista
