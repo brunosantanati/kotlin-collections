@@ -23,4 +23,6 @@ fun main() {
 
     println("Tem o nome Alex? ${nomes.contains("Alex")}")
     println("Tamanho da coleção ${nomes.size}")
+
+    iteratorExample()
 }
