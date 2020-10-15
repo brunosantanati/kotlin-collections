@@ -1,10 +1,10 @@
 package br.com.alura
 
 fun immutableColletions(){
+    //val nomes: Collection<String> = listOf(
+    //val nomes: Iterable<String> = listOf(
+    //val nomes: Iterable<String> = setOf(
     val nomes: List<String> = listOf(
-            //val nomes: Collection<String> = listOf(
-            //val nomes: Iterable<String> = listOf(
-            //val nomes: Iterable<String> = setOf(
             "Alex",
             "Fran",
             "Gui",
