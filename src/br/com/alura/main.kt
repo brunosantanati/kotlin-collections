@@ -4,15 +4,14 @@ package br.com.alura
 
 fun main() {
     val banco = BancoDeNomes()
-    val nomesSalvos: MutableCollection<String> = banco.nomes as MutableCollection<String> //Burlando a restrição para poder adicionar nessa lista
-    nomesSalvos.add("Paulo") //add funciona devido a linha acima
+    val nomesSalvos: Collection<String> = banco.nomes //recebe uma cópia(vazia nesse momento) devido ao toList()
     banco.salva("Bruno")
-    println(nomesSalvos)
+    println(nomesSalvos) //imprime vazio pois a cópia está vazia
     println(BancoDeNomes().nomes) //devido ao uso do companion object essa lista não está vazia, mesmo usando nova instância
 }
 
 class BancoDeNomes{
-    val nomes: Collection<String> get() = dados //Uma coleção mutável interna e uma imutável pública
+    val nomes: Collection<String> get() = dados.toList() //devolvendo uma cópia
 
     fun salva(nome: String){
         dados.add(nome)
