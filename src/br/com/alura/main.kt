@@ -1,5 +1,7 @@
 package br.com.alura
 
+//doc "Set Specific Operations": https://kotlinlang.org/docs/reference/set-operations.html
+
 fun main() {
     val assistiramCursoAndroid: Set<String> = setOf("Alex", "Fran", "Gui", "Maria")
     val assistiramCursoKotlin: Set<String> = setOf("Alex", "Paulo", "Maria")
@@ -12,14 +14,14 @@ fun main() {
     println(assistiramAmbos)
 
     println(assistiramCursoAndroid + assistiramCursoKotlin)
-    println(assistiramCursoAndroid.union(assistiramCursoKotlin))
+    println(assistiramCursoAndroid.union(assistiramCursoKotlin)) //union(): devolve um novo Set com a soma dos elementos dos conjuntos
     println(assistiramCursoAndroid union assistiramCursoKotlin) //infix
 
     println(assistiramCursoKotlin - assistiramCursoAndroid)
     println(assistiramCursoAndroid - assistiramCursoKotlin)
-    println(assistiramCursoAndroid subtract assistiramCursoKotlin)
+    println(assistiramCursoAndroid subtract assistiramCursoKotlin) //subtract(): devolve um novo Set subtraindo os elementos contidos no segundo conjunto
 
-    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
+    println(assistiramCursoKotlin intersect assistiramCursoAndroid) //intersect(): devolve um novo Set apenas com os elementos contidos em ambos os conjuntos
 
     val assistiramList = assistiramAmbos.toMutableList()
     assistiramList.add("Alex") //insere duplicidade na lista
