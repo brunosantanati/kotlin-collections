@@ -11,7 +11,7 @@ fun main() {
 }
 
 class BancoDeNomes{
-    val nomes: Collection<String> get() = dados.toList() //devolvendo uma cópia
+    val nomes: Collection<String> get() = dados.toList() //devolvendo uma cópia(copia a lista mutável para uma lista imutável)
 
     fun salva(nome: String){
         dados.add(nome)
