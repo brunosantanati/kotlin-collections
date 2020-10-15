@@ -8,13 +8,13 @@ fun main() {
 }
 
 class BancoDeNomes{
-    val nomes: Collection<String> get() = dados
+    val nomes: Collection<String> get() = dados //Uma coleção mutável interna e uma imutável pública
 
     fun salva(nome: String){
         dados.add(nome)
     }
 
     companion object {
-        val dados = mutableListOf<String>()
+        val dados = mutableListOf<String>() //Companion object na coleção mutável para manter os dados
     }
 }
