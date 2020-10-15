@@ -1,12 +1,8 @@
 package br.com.alura
 
 fun main() {
-    val assistiramCursoAndroid = listOf("Alex", "Fran", "Gui", "Maria")
-    val assistiramCursoKotlin = listOf("Alex", "Paulo", "Maria")
-    /*val assistiramAmbos = mutableListOf<String>()
-    assistiramAmbos.addAll(assistiramCursoAndroid)
-    assistiramAmbos.addAll(assistiramCursoKotlin)*/
-    val assistiramAmbos = assistiramCursoAndroid + assistiramCursoKotlin
-    println(assistiramAmbos.distinct())
-    println(assistiramAmbos[0])
+    val assistiramCursoAndroid: Set<String> = setOf("Alex", "Fran", "Gui", "Maria")
+    val assistiramCursoKotlin: List<String> = listOf("Alex", "Paulo", "Maria")
+    val assistiramAmbos: Set<String> = assistiramCursoAndroid.plus(assistiramCursoKotlin) //plus é a mesma coisa que usar o sinal de +. Pesquisar operator
+    println(assistiramAmbos)
 }
