@@ -8,4 +8,5 @@ fun main() {
     assistiramAmbos.addAll(assistiramCursoKotlin)*/
     val assistiramAmbos = assistiramCursoAndroid + assistiramCursoKotlin
     println(assistiramAmbos.distinct())
+    println(assistiramAmbos[0])
 }
