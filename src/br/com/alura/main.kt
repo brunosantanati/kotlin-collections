@@ -1,5 +1,7 @@
 package br.com.alura
 
+//doc sobre Iterators: https://kotlinlang.org/docs/reference/iterators.html
+
 fun main() {
     val nomes: List<String> = listOf(
     //val nomes: Collection<String> = listOf(
