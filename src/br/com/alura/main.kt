@@ -1,5 +1,7 @@
 package br.com.alura
 
+//doc do infix notation: https://kotlinlang.org/docs/reference/functions.html#infix-notation
+
 fun main() {
     //mapOf<Int, Double>(Pair(1, 20.0)) //podemos deixar explícito que é um map de Int e Double
     val pedidos = mapOf<Int, Double>(Pair(1, 20.0), Pair(2, 34.0), 3 to 50.0)
