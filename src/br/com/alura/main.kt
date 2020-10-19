@@ -40,6 +40,23 @@ fun main() {
     println(pedidosFreteGratisAgrupados)
     println(pedidosFreteGratisAgrupados[true])
     println(pedidosFreteGratisAgrupados[false])
+
+    val nomes = listOf(
+            "Alex",
+            "Fran",
+            "Gui",
+            "Ana",
+            "Paulo",
+            "Maria",
+            "Mario",
+            "Gisele"
+    )
+
+    val agenda: Map<Char, List<String>> = nomes.groupBy { nome ->
+        nome.first()
+    }
+    println(agenda)
+    println(agenda['A'])
 }
 
 data class Pedido(val numero: Int, val valor: Double)
