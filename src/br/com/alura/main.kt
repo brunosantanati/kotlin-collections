@@ -43,6 +43,11 @@ fun main() {
     println(pedidosFreteGratisAgrupados[true])
     println(pedidosFreteGratisAgrupados[false])
 
+    val pedidosAgrupados: Grouping<Pedido, Boolean> = pedidos.groupingBy { pedido ->
+        pedido.valor > 50.0
+    }
+    println(pedidosAgrupados.eachCount())
+
     val nomes = listOf(
             "Alex",
             "Fran",
@@ -59,6 +64,11 @@ fun main() {
     }
     println(agenda)
     println(agenda['A'])
+
+    val agenda2: Grouping<String, Char> = nomes.groupingBy { nome ->
+        nome.first()
+    }
+    println(agenda2.eachCount()) //Além do eachCount(), também temos acesso a: fold(), reduce() e aggregate()
 }
 
 data class Pedido(val numero: Int, val valor: Double)
