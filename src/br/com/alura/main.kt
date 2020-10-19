@@ -32,6 +32,8 @@ fun main() {
     }
     println(mapa)
 
+    //doc sobre collection grouping: https://kotlinlang.org/docs/reference/collection-grouping.html
+
     //ao invés de fazer do jeto acima, posso agrupar do jeito abaixo
     val pedidosFreteGratisAgrupados: Map<Boolean, List<Pedido>> =
             pedidos.groupBy { pedido: Pedido ->
