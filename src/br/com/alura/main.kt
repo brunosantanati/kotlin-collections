@@ -25,6 +25,21 @@ fun main() {
     }
     println(pedidosFreteGratis)
     println(pedidosFreteGratis[Pedido(numero=1, valor=20.0)]) //buscar pela chave que é o Pedido
+
+    //não funciona muito bem pois a chave não pode se repetir no map:
+    val mapa: Map<Boolean, Pedido> = pedidos.associateBy { pedido ->
+        pedido.valor > 50.0
+    }
+    println(mapa)
+
+    //ao invés de fazer do jeto acima, posso agrupar do jeito abaixo
+    val pedidosFreteGratisAgrupados: Map<Boolean, List<Pedido>> =
+            pedidos.groupBy { pedido: Pedido ->
+                pedido.valor > 50.0
+            }
+    println(pedidosFreteGratisAgrupados)
+    println(pedidosFreteGratisAgrupados[true])
+    println(pedidosFreteGratisAgrupados[false])
 }
 
 data class Pedido(val numero: Int, val valor: Double)
