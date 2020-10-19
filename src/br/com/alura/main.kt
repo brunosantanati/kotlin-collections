@@ -7,9 +7,56 @@ fun main() {
     val pedidos: MutableMap<Int, Double?> = mutableMapOf(
             Pair(1, 20.0),
             Pair(2, 34.0),
-            3 to 50.0
+            3 to 50.0,
+            4 to null,
+            6 to 100.0,
+            7 to 150.0,
+            8 to 80.0
     )
 
+    val valorPedido: Double? = pedidos.get(5) //retorna null se a chave não existe
+    println(valorPedido) //imprime null
+    //val valorDoPedido: Double? = pedidos.getValue(5) //Lança exception se a chave não existe (java.util.NoSuchElementException: Key 5 is missing in the map.)
+
+    println(pedidos.getOrElse(1, { //imprime 20
+        "Não tem o pedido"
+    }))
+    println(pedidos.getOrElse(5, { //imprime "Não tem o pedido"
+        "Não tem o pedido"
+    }))
+
+    println(pedidos.getOrDefault(1, -1.0)) //imprime 20
+    println(pedidos.getOrDefault(5, -1.0)) //imprime -1.0
+
+    println(pedidos.keys)
+
+    for (numero in pedidos.keys){
+        println("Pedido $numero")
+    }
+
+    println(pedidos.values)
+
+    for (valor in pedidos.values){
+        println("Valor do pedido $valor")
+    }
+
+    val pedidosFiltrados = pedidos.filter { (numero, valor) ->
+        if(valor != null) numero % 2 == 0 && valor > 50.0 else false
+    }
+    println(pedidosFiltrados)
+
+    val pedidosAcima = pedidos.filterValues { valor ->
+        if(valor != null) valor > 70.0 else false
+    }
+    println(pedidosAcima)
+
+    val pedidosPares = pedidos.filterKeys { valor ->
+        valor % 2 == 0
+    }
+    println(pedidosPares)
+}
+
+fun testaMap(pedidos: MutableMap<Int, Double?>) {
     println(pedidos)
 
     val pedido0: Double? = pedidos[0]
@@ -22,7 +69,7 @@ fun main() {
         println("pedido 1 - $it")
     }
 
-    for(pedido: Map.Entry<Int, Double?> in pedidos){
+    for (pedido: Map.Entry<Int, Double?> in pedidos) {
         println("número do pedido: ${pedido.key}")
         println("valor do pedido: ${pedido.value}")
     }
