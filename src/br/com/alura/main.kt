@@ -10,7 +10,7 @@ fun main() {
             3 to 50.0,
             4 to null,
             6 to 100.0,
-            7 to 150.0,
+            7 to 100.0,
             8 to 80.0
     )
 
@@ -54,6 +54,32 @@ fun main() {
         valor % 2 == 0
     }
     println(pedidosPares)
+
+    println(pedidos + Pair(9, 90.0))
+    println(pedidos + mapOf(10 to 90.0, 11 to 20.0))
+    println(pedidos)
+
+    println(pedidos - 6)
+    println(pedidos)
+
+    println(pedidos - listOf(6, 7))
+    println(pedidos)
+
+    pedidos.putAll(setOf<Pair<Int, Double>>(9 to 90.0, 10 to 20.0))
+    pedidos += listOf<Pair<Int, Double>>(9 to 99.9, 11 to 110.0, 12 to 120.0)
+    println(pedidos)
+
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    pedidos.values.remove(50.0)
+    println(pedidos)
+
+    pedidos.values.remove(100.0)
+    println(pedidos)
+
+    pedidos -= 12
+    println(pedidos)
 }
 
 fun testaMap(pedidos: MutableMap<Int, Double?>) {
